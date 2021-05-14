@@ -1,0 +1,25 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EdgeHTMLBrowser"
+        xmlns:Controls="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls.WebView" x:Class="EdgeHTMLBrowser.MainWindow"
+        mc:Ignorable="d"
+        Title="EdgeHTML WebView Browser" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="addressBar" Grid.Row="0" Text="http://localhost:8080" Margin="5,5,0,5.4" KeyDown="AddressBar_KeyDown" />
+        <Button Grid.Column="1" Content="GO" Margin="5" Padding="10,1" Click="Button_Click" />
+        <Controls:WebView x:Name="webView" Grid.Row="1" Grid.ColumnSpan="2" IsPrivateNetworkClientServerCapabilityEnabled="True"/>
+
+    </Grid>
+</Window>
